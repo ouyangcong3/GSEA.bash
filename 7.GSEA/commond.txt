@@ -1,0 +1,4 @@
+rnkfile=/home/Leedagger/liver/GSEA/count/7.GSEA/HepG2lps_H8lps.diff.rnk
+outdir=/home/Leedagger/liver/GSEA/count/7.GSEA/RNA_SEQ_Result
+for dataset in all h c2 c3 c4 c5 c6 c7; do gmtfile=/home/liver/GSEA/count/7.GSEA/GSEAdatasets/"$dataset"*; java -cp gsea-3.0.jar -Xmx51200m xtools.gsea.GseaPreranked -gmx $gmtfile -norm meandiv -nperm 1000 -rnk $rnkfile -scoring_scheme weighted -rpt_label HepG2lps_H8lps.diff_"$dataset" -create_svgs false -make_sets true -plot_top_x 25 -rnd_seed timestamp -set_max 500 -set_min 15 -zip_report false -out $outdir -gui false; done;
+free

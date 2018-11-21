@@ -17,5 +17,5 @@ write.table(resdata[,1:7],file = paste(Outputname,"_diff.txt",sep=""),sep="\t",q
 write.table(resdata[,-c(2:7)],file = paste(Outputname,"_normalize.txt",sep=""),sep="\t",quote=F,row.names=F)
 }
 
-DESeq2diff("siPHLDA1_counts.txt","siPHLDA1",2,2)
+DESeq2diff("_counts.txt","",2,2)
 DESeq2diff("mRNA.symbol.txt","TCGA_CRC",51,647)
